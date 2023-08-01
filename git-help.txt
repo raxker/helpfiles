@@ -1,0 +1,34 @@
+       git status  -- check status
+
+        git checkout prod  --
+
+        git pull --  pull down the deltas
+
+#before you can make change you need to branch the repro
+
+        git branch - lists brances
+
+#switch to branch
+
+        git checkout -b raxker/createorg_550091
+
+#If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> raxker/createorg_550091
+
+#delete a branch
+
+        git branch -d <branch>
+
+        git branch -D <branch>
+
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> raxker/custom_rback_347912raxker/custom_rback_347912
+
+
+

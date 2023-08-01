@@ -1,0 +1,69 @@
+docker image ls
+
+docker ps
+
+docker ps -a
+
+#IMAGES
+#for th first time creates a new container each time which can be seen with "docker ps -a"
+# RUN is on the image which creates a new container
+
+	docker build -t <REPOSITORY>:<TAG>   # requires Dockerfile
+
+	docker run <image>        	# this ises the image and creates a new container
+	docker run -it <image>		# for interactive session
+
+	# deletes image
+	#Images which have are used by a contaner can not be deleted, the container has to be deleted first
+
+	docker rmi <image> <image>
+
+	docker images 			# list all images
+
+	docker image prune 		# removes all unused images
+
+
+	docker inspect <image>
+
+#CONTAINER
+# START starts an existing conatiner
+
+	docker start -a -i  <container> # starts a container in interactive
+
+	docker logs -f <container>	# like a tail -f
+
+	docker rm <container> <container>
+
+
+# start and container which is deleted after it finishes
+
+	# starts an container based on an image and them removes it when finiseda
+	docker run -p 3000:80 -d --rm --name <name> <image>
+
+#copy
+
+	docker cp <path>/. <container_name>:/app
+
+# Entry point, choose an alternative entry poing
+
+	docker run --rm -it --entrypoint bash <image-name-or-id>
+#or
+	docker exec -it <container-name-or-id> bash
+
+
+#NETWORK
+#
+docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+1befe23acd58        bridge              bridge              local
+726ead8f4e6b        host                host                local
+ef4896538cc7        none                null                local
+
+
+brctl show
+bridge name     bridge id               STP enabled     interfaces
+docker0         8000.0242f17f89a6       no              veth3a080f
+
+docker network inspect bridge
+
+

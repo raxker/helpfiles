@@ -1,0 +1,51 @@
+# Add the Datadog helm repo
+
+	helm repo add datadog https://helm.datadoghq.com
+
+
+#Search datadog repro
+
+	helm search repo datadog
+
+	NAME                               	CHART VERSION	APP VERSION	DESCRIPTION
+	datadog/datadog                    	2.28.11      	7          	Datadog Agent
+	datadog/datadog-crds               	0.4.6        	1          	Datadog Kubernetes CRDs chart
+	datadog/datadog-operator           	0.7.8        	0.7.2      	Datadog Operator
+	datadog/extendeddaemonset          	v0.2.2       	v0.7.0     	Extended Daemonset Controller
+	datadog/synthetics-private-location	0.11.0       	1.18.0     	Datadog Synthetics Private Location
+
+#Update repo
+###########
+
+	helm repo update
+
+
+#Install DD Agent
+###############
+
+	helm install datadog-ste --set datadog.apiKey=<API Key>>  --set targetSystem=linux  datadog/datadog
+
+	kubectl create namespace datadog
+	helm install -f datadog-values.yaml datadog-ste --namespace datadog datadog/datadog 
+
+#Upgrade config
+	helm upgrade -f datadog-values.yaml datadog-ste --namespace datadog datadog/datadog
+
+##List charts (installed charts)
+################################
+
+	helm list
+
+##Delete helm install
+##################
+
+	helm delete datadog-ste
+	helm delete datadog-ste --namespace datadog
+
+
+	helm install datadog-ste --set datadog.apiKey=<API Key>  --set clusterAgent.enabled=true --set clusterAgent.metricsProvider.enabled=true datadog/datadog
+
+
+Check Agent status
+###############
+	kubectl get pods --namespace test

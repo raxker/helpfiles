@@ -1,0 +1,28 @@
+# Display DD-Agent
+
+# Show the DD Agents
+	kubectl describe pods --namespace dc-automation dc-dd-datadog-2dvdc
+
+# DD-Agent info
+	kubectl exec <agent-pod> --container trace-agent agent status
+                                     ----------- 
+	kubectl exec -it <agent-pod> --container trace-agent bash
+
+# Delete a POD
+# Ether use the yaml
+#
+# or you can use 
+	kubectl delete pods <pod>
+
+# if this is not work it is bcause of the scaling of the Deployment
+#
+# Uuse
+	kubectl get deployments.apps
+
+# Then delete the deployment
+
+	kubectl delete deployment <deployment>
+
+$ Create name Space
+
+kubectl create namespace <NAME>
