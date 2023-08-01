@@ -31,4 +31,13 @@ If you wish to set tracking information for this branch you can do so with:
     git branch --set-upstream-to=origin/<branch> raxker/custom_rback_347912raxker/custom_rback_347912
 
 
+#Commit Changed
 
+        #Add the Changes to the staging area
+        git add .
+
+        #comit the files
+        git commit -m "inital Commit"
+
+#Commit only one files
+        git add 
