@@ -22,11 +22,12 @@ append_if_not_exists() {
             echo "Adding entry to $1"
             echo "$ADD_LINE" >> "$1"
 
-            if [ ! -d "~/helpfiles" ]; then
-                echo "Error: Source directory '$source_dir' does not exist."
-                echo "Adding soft link to helpfile ${SCRIPT_DIR}"
-                ln -s ${SCRIPT_DIR} ~/
-            
+            if [ ! -d "$HOME/helpfiles" ]; then
+                echo "TEST: $HOME/helpfiles"
+                echo "Error: Source directory $HOME/helpfiles does not exist."
+                echo "Adding soft link from ${SCRIPT_DIR} to $HOME/helpfiles"
+                ln -s ${SCRIPT_DIR} $HOME
+            fi
 
             echo "Source $1"
             . $1
