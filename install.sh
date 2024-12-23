@@ -21,6 +21,8 @@ append_if_not_exists() {
         else
             echo "Adding entry to $1"
             echo "$ADD_LINE" >> "$1"
+            echo "Source $1"
+            . $1
         fi
         
         # echo "Current contents of $1:"
