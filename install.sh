@@ -36,7 +36,7 @@ case "$current_shell" in
     */bash)
         echo "Running Bash Shell"
         append_if_not_exists ~/.bashrc
-        append_if_not_exists ~/.bash_profile
+        # append_if_not_exists ~/.bash_profile
         ;;
     */zsh)
         echo "Running Zsh Shell"
@@ -58,3 +58,5 @@ case "$current_shell" in
         echo "Unknown shell: $current_shell"
         ;;
 esac
+
+
