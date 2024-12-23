@@ -1,19 +1,13 @@
-…or create a new repository on the command line
+# To install
+
+# run sh install.sh
+#
+# This will add the profile to the config file with an absolut path.
+# The idear here is that you can install the ./helpfiles to a user home and
+# then use the same instalk script for root is required
 
 
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin git@github.com:raxker/test2.git
-git push -u origin main
-
-
-…or push an existing repository from the command line
-
-git remote add origin git@github.com:raxker/test2.git
-git branch -M main
-git push -u origin main
+sh ./install
 
 
 

@@ -11,7 +11,7 @@ alias k=/usr/local/bin/kubectl
 # Creats alias for the CLI help files
 #
 printf "Creating aliases: "
-for file in ~/helpfile/*.txt; do
+for file in ~/helpfiles/*.txt; do
     if [ -f "$file" ]; then
         # Get just the filename without path and extension
         filename=$(basename "$file" .txt)
